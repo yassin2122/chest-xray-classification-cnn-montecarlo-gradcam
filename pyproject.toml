@@ -1,0 +1,81 @@
+# ─── build-system ────────────────────────────────────────────────────────────
+[build-system]
+requires      = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# ─── project metadata ─────────────────────────────────────────────────────────
+[project]
+name        = "chest-xray-classifier"
+version     = "0.1.0"
+description = "Pneumonia detection from chest X-rays with MC Dropout uncertainty & Grad-CAM explainability."
+readme      = "README.md"
+license     = {text = "MIT"}
+requires-python = ">=3.9"
+authors     = [{name = "Your Name", email = "you@example.com"}]
+
+keywords = [
+    "deep-learning", "chest-xray", "pneumonia",
+    "monte-carlo-dropout", "gradcam", "pytorch", "streamlit",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+
+dependencies = [
+    "torch>=2.0",
+    "torchvision>=0.15",
+    "torchinfo>=1.8",
+    "numpy>=1.24",
+    "opencv-python>=4.7",
+    "matplotlib>=3.7",
+    "seaborn>=0.12",
+    "tqdm>=4.65",
+    "scikit-learn>=1.2",
+    "streamlit>=1.28",
+    "Pillow>=9.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "flake8>=6.1",
+    "black>=23.9",
+    "isort>=5.12",
+]
+
+[project.scripts]
+chest-xray-app = "src.app:main"
+
+[project.urls]
+Repository = "https://github.com/yassin2122/chest-xray-classification-cnn-montecarlo-gradcam"
+"Bug Tracker" = "https://github.com/yassin2122/chest-xray-classification-cnn-montecarlo-gradcam/issues"
+
+# ─── package discovery ────────────────────────────────────────────────────────
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+# ─── black ────────────────────────────────────────────────────────────────────
+[tool.black]
+line-length    = 100
+target-version = ["py39", "py310", "py311"]
+
+# ─── isort ────────────────────────────────────────────────────────────────────
+[tool.isort]
+profile            = "black"
+line_length        = 100
+known_first_party  = ["src"]
+
+# ─── pytest ───────────────────────────────────────────────────────────────────
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts   = "-v --tb=short"

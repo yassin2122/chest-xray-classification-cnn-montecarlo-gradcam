@@ -1,0 +1,4 @@
+# Model checkpoints are stored here.
+# Large .pth / .pt files are excluded by .gitignore.
+# Use Git LFS or a remote storage solution (e.g. Google Drive, HuggingFace Hub)
+# to share trained weights with collaborators.
