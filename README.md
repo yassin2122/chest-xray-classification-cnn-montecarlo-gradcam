@@ -25,6 +25,7 @@
 - [Docker](#-docker)
 - [Running Tests](#-running-tests)
 - [Configuration](#-configuration)
+- [Roadmap](#-roadmap)
 - [Contributing](#-contributing)
 - [License](#-license)
 
@@ -260,6 +261,21 @@ pytest --cov=src --cov-report=term-missing
 
 All settings live in [`src/config.py`](src/config.py).  
 The data directory can be overridden via the **`CHEST_XRAY_DATA_DIR`** environment variable — no code changes needed.
+
+---
+
+## 🗺️ Roadmap
+
+Planned improvements and ideas for future versions:
+
+- [ ] **Transfer learning** — fine-tune pretrained backbones (ResNet-50, EfficientNet-B3) for higher accuracy
+- [ ] **Multi-class support** — extend to bacterial vs. viral pneumonia classification
+- [ ] **SHAP integration** — complement Grad-CAM with SHAP values for feature-level explanations
+- [ ] **REST API** — FastAPI endpoint wrapping the MC-Dropout inference pipeline
+- [ ] **Quantisation & pruning** — reduce model size for edge deployment
+- [ ] **Calibration curves** — reliability diagrams to audit uncertainty estimates
+
+Contributions toward any of these goals are especially welcome!
 
 ---
 
