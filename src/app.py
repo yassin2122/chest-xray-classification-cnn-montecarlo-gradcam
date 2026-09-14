@@ -9,7 +9,7 @@ import os
 import sys
 from .config import CONFIDENCE_THRESHOLD, UNCERTAINTY_THRESHOLD, MC_SAMPLES_DEFAULT
 
-# OpenCV is optional; handle gracefully if not installed
+# OpenCV is optional; handle gracefully if not installed yes
 try:
     import cv2
     _HAS_CV2 = True
